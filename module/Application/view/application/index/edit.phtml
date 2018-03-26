@@ -1,0 +1,89 @@
+<?php
+$this->headTitle('Edit Auction');
+?>
+<header>
+</header>
+<main>
+<?php
+$form->get('item')->setAttributes([
+    'class'=>'form-control', 
+    'placeholder'=>'1234'
+    ]);
+
+$form->get('bid')->setAttributes([
+    'class'=>'form-control', 
+    'placeholder'=>'30'
+    ]);
+
+$form->get('buyout')->setAttributes([
+    'class'=>'form-control', 
+    'placeholder'=>'23'
+    ]);
+
+$form->get('quantity')->setAttributes([
+    'class'=>'form-control', 
+    'placeholder'=>'12'
+    ]);
+
+$form->get('submit')
+        ->setAttributes(['class'=>'btn btn-primary'])
+        ->setValue('Save');
+
+$form->prepare();
+?>
+
+<h1>Edit Auction <?= $this->escapeHtml($auction->_auc) ?></h1>
+
+<table class="datatable">
+<tbody>
+<?= $this->form()->openTag($form); ?>
+        
+        <tr>
+            <td>
+            <?= $this->formLabel($form->get('item')); ?>
+            </td>  
+            <td>
+            <?= $this->formElement($form->get('item')); ?>
+            <?= $this->formElementErrors($form->get('item')); ?>
+            </td>         
+        </tr>
+        
+        <tr>
+            <td>
+            <?= $this->formLabel($form->get('bid')); ?>
+            </td>  
+            <td>
+            <?= $this->formElement($form->get('bid')); ?>
+            <?= $this->formElementErrors($form->get('bid')); ?>
+            </td>         
+        </tr>
+
+        <tr>
+            <td>
+            <?= $this->formLabel($form->get('buyout')); ?>
+            </td>  
+            <td>
+            <?= $this->formElement($form->get('buyout')); ?>
+            <?= $this->formElementErrors($form->get('buyout')); ?>
+            </td>         
+        </tr>
+
+        <tr>
+            <td>
+            <?= $this->formLabel($form->get('quantity')); ?>
+            </td>  
+            <td>
+            <?= $this->formElement($form->get('quantity')); ?>
+            <?= $this->formElementErrors($form->get('quantity')); ?>
+            </td>         
+        </tr>
+        <tr>
+            <td>
+            <?= $this->formElement($form->get('submit')); ?>
+            </td>         
+        </tr>
+        <?= $this->form()->closeTag(); ?>
+    </tbody>    
+</table>   
+
+</main>
