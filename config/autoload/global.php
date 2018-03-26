@@ -18,9 +18,9 @@ use Zend\Session\Validator\HttpUserAgent;
 return [
     'db' => [
         'driver' => 'Pdo',
-        'dsn'    => 'mysql:dbname=wowauction;host=localhost;charset=utf8;',
-        'username' => 'wow', 
-        'password' => 'Bonjours123', 
+        'dsn'    => 'mysql:dbname=laboratoire;host=localhost;charset=utf8;',
+        'username' => 'root', 
+        'password' => '', 
     ],
     'service_manager' => [ 
         'factories' => [  
